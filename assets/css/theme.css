@@ -11,7 +11,6 @@
   --line-shadow:0 10px 30px rgba(17,24,39,.08);
   --line-input:#F3F4F6;
 }
-
 [data-theme="dark"]{
   --line-bg:#111418;
   --line-card:#1B2027;
@@ -22,9 +21,4 @@
   --line-shadow:0 10px 30px rgba(0,0,0,.26);
   --line-input:#232A33;
 }
-
-html,body{
-  min-height:100%;
-  background:var(--line-bg);
-  color:var(--line-text);
-}
+html,body{min-height:100%;background:var(--line-bg);color:var(--line-text)}
