@@ -1,0 +1,30 @@
+:root{
+  --line-green:#06C755;
+  --line-green-dark:#00B900;
+  --line-bg:#F4F5F7;
+  --line-card:#FFFFFF;
+  --line-card-soft:#F7F8FA;
+  --line-text:#111827;
+  --line-muted:#7B8494;
+  --line-border:#E8EAEE;
+  --line-danger:#FF4D4F;
+  --line-shadow:0 10px 30px rgba(17,24,39,.08);
+  --line-input:#F3F4F6;
+}
+
+[data-theme="dark"]{
+  --line-bg:#111418;
+  --line-card:#1B2027;
+  --line-card-soft:#232A33;
+  --line-text:#F4F7FA;
+  --line-muted:#A4ACB8;
+  --line-border:#303946;
+  --line-shadow:0 10px 30px rgba(0,0,0,.26);
+  --line-input:#232A33;
+}
+
+html,body{
+  min-height:100%;
+  background:var(--line-bg);
+  color:var(--line-text);
+}
