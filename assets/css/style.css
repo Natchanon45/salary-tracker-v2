@@ -195,6 +195,8 @@ body {
     border: none;
     box-shadow: 0 8px 24px rgba(6, 199, 85, .25);
     transform: scale(1.02);
+    color: #fff;
+
 }
 
 .summary-mini.net-highlight span,
@@ -203,6 +205,7 @@ body {
 }
 
 .summary-mini.net-highlight strong {
+    color: #fff;
     font-size: 20px;
     font-weight: 900;
 }
