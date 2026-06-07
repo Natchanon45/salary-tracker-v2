@@ -75,15 +75,25 @@ body {
     position: sticky;
     top: 0;
     z-index: 30;
-    background: linear-gradient(135deg, #06c755, #05a647);
+    background: linear-gradient(135deg,
+            #06c755 0%,
+            #05a647 100%);
     color: white;
-    border-radius: 24px;
-    padding: 18px;
+    padding: 20px 18px;
     display: flex;
     justify-content: space-between;
-    /* ⭐ สำคัญ */
     align-items: center;
-    box-shadow: var(--shadow-lg);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .12);
+    border-radius: 24px;
+}
+
+@media (min-width:768px) {
+    .line-header {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 20px 18px;
+        border-radius: 28px;
+    }
 }
 
 .app-eyebrow {
@@ -112,7 +122,7 @@ body {
 }
 
 .app-main {
-    margin-top: -12px
+    margin-top: 12px
 }
 
 .summary-card {
@@ -387,7 +397,7 @@ input[type="month"]::-webkit-calendar-picker-indicator {
 }
 
 .line-secondary {
-    background: var(--line-card-soft);
+    background: var(--line-green-dark);
     color: var(--line-text);
     border: 1px solid var(--line-border)
 }
@@ -478,6 +488,167 @@ input[type="month"]::-webkit-calendar-picker-indicator {
     font-size: 12px
 }
 
+.backup-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px
+}
+
+@media (min-width:480px) {
+    .backup-grid {
+        grid-template-columns: repeat(3, 1fr)
+    }
+}
+
+.backup-grid .line-secondary {
+    font-size: 13px;
+    padding: 0 8px
+}
+
+.backup-note {
+    margin-top: 10px;
+    color: var(--line-muted);
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.5
+}
+
+.line-primary,
+.line-secondary {
+    border: 0;
+    border-radius: 16px;
+    min-height: 48px;
+    font-weight: 800;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-family: inherit !important
+}
+
+.line-primary {
+    background: var(--line-green);
+    color: #fff
+}
+
+/* .line-secondary {
+    background: var(--line-card-soft);
+    color: var(--line-text);
+    border: 1px solid var(--line-border)
+} */
+
+.backup-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px
+}
+
+@media (min-width:480px) {
+    .backup-grid {
+        grid-template-columns: repeat(3, 1fr)
+    }
+}
+
+.backup-grid .line-secondary {
+    font-size: 13px;
+    padding: 0 8px
+}
+
+.backup-note {
+    margin-top: 10px;
+    color: var(--line-muted);
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.5
+}
+
+.line-file {
+    min-height: 48px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: var(--line-card-soft);
+    border: 1px dashed var(--line-border);
+    color: var(--line-text);
+    font-weight: 800;
+    cursor: pointer
+}
+
+.line-file input {
+    display: none
+}
+
+.line-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px
+}
+
+.line-empty {
+    padding: 18px;
+    text-align: center;
+    color: var(--line-muted);
+    background: var(--line-card-soft);
+    border-radius: 18px;
+    font-weight: 700
+}
+
+.line-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px;
+    background: var(--line-card-soft);
+    border: 1px solid var(--line-border);
+    border-radius: 18px
+}
+
+.row-main {
+    min-width: 0
+}
+
+.row-title {
+    font-weight: 800;
+    font-size: 15px
+}
+
+.row-sub {
+    font-size: 12px;
+    color: var(--line-muted);
+    font-weight: 700;
+    margin-top: 2px
+}
+
+.row-amount {
+    text-align: right;
+    font-weight: 800;
+    color: var(--line-green);
+    white-space: nowrap
+}
+
+.icon-danger,
+.mini-danger {
+    border: 0;
+    border-radius: 999px;
+    background: rgba(255, 77, 79, .10);
+    color: var(--line-danger);
+    font-weight: 800
+}
+
+.icon-danger {
+    width: 34px;
+    height: 34px
+}
+
+.mini-danger {
+    padding: 6px 10px;
+    font-size: 12px
+}
+
+
 .line-toast {
     position: fixed;
     left: 50%;
@@ -526,12 +697,4 @@ input[type="month"]::-webkit-calendar-picker-indicator {
     font-size: 12px;
     font-weight: 700;
     padding: 16px 0 26px
-}
-
-@media (min-width:768px) {
-    .line-header {
-        max-width: 700px;
-        margin: 0 auto;
-        /* border-radius: 0 0 28px 28px */
-    }
 }

@@ -6,10 +6,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
     <meta name="theme-color" content="#06C755">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="apple-mobile-web-app-title" content="Salary">
     <title>Salary Tracker</title>
-
     <link rel="manifest" href="manifest.json">
     <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,7 +14,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-
     <link rel="stylesheet" href="assets/css/theme.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -28,22 +24,17 @@
             <div>
                 <div class="app-eyebrow">Salary Tracker</div>
                 <h1>เงินเดือนค้างจ่าย</h1>
-            </div>
-            <button id="themeBtn" class="theme-fab" type="button" aria-label="เปลี่ยนธีม">
-                <i id="themeIcon" class="bi bi-circle-half"></i>
-            </button>
+            </div><button id="themeBtn" class="theme-fab" type="button"><i id="themeIcon"
+                    class="bi bi-circle-half"></i></button>
         </header>
-
         <main class="container app-main">
             <section class="summary-card">
                 <div class="summary-top">
                     <div>
-                        <span class="summary-label">ยอดค้างรวม</span>
-                        <strong id="totalOutstanding" class="summary-amount">0.00</strong>บาท
-                    </div>
-                    <span class="status-pill"><i class="bi bi-wallet2"></i> FIFO</span>
+                        <span class="summary-label">ยอดค้างรวม</span><strong id="totalOutstanding"
+                            class="summary-amount">0.00</strong>
+                    </div><span class="status-pill"><i class="bi bi-wallet2"></i> FIFO</span>
                 </div>
-
                 <div class="summary-grid">
                     <div class="summary-mini"><span>เงินเดือน</span><strong id="salaryDisplay">0.00</strong>บาท</div>
                     <div class="summary-mini"><span>ประกันสังคม</span><strong id="ssDisplay">0.00</strong>บาท</div>
@@ -52,107 +43,86 @@
                             id="netSalary">0.00</strong>บาท</div>
                 </div>
             </section>
-
             <section id="pwaActions" class="pwa-actions">
-                <button id="installBtn" class="line-action d-none" type="button">
-                    <i class="bi bi-phone"></i>
-                    <span>ติดตั้งแอพ</span>
-                </button>
-                <button id="updateBtn" class="line-action d-none" type="button">
-                    <i class="bi bi-arrow-clockwise"></i>
-                    <span>Update App</span>
-                </button>
+                <button id="installBtn" class="line-action d-none" type="button"><i
+                        class="bi bi-phone"></i><span>ติดตั้งแอพ</span></button>
+                <button id="updateBtn" class="line-action d-none" type="button"><i
+                        class="bi bi-arrow-clockwise"></i><span>Update App</span></button>
             </section>
-
             <section class="line-tabs">
                 <button class="tab-btn active" data-tab="settings"><i class="bi bi-sliders"></i> ตั้งค่า</button>
                 <button class="tab-btn" data-tab="debts"><i class="bi bi-calendar2-month"></i> เดือนค้าง</button>
                 <button class="tab-btn" data-tab="payments"><i class="bi bi-cash-coin"></i> การจ่าย</button>
             </section>
-
             <section id="tab-settings" class="tab-panel active">
                 <div class="line-card">
                     <div class="card-title"><i class="bi bi-person-vcard"></i><span>ตั้งค่ารายรับและยอดหัก</span></div>
-
                     <label class="line-label">เงินเดือนจริง</label>
                     <input id="salary" class="line-input number-input" inputmode="decimal" placeholder="เช่น 30000">
-
                     <label class="line-label">ประกันสังคม (%)</label>
                     <input id="ssRate" class="line-input number-input" inputmode="decimal" placeholder="เช่น 5">
-
-                    <label class="line-label">รูปแบบภาษีหัก ณ ที่จ่าย</label>
-                    <select id="taxMode" class="line-input">
+                    <label class="line-label">รูปแบบภาษีหัก ณ ที่จ่าย</label><select id="taxMode" class="line-input">
                         <option value="percent">คิดเป็นเปอร์เซ็นต์ (%)</option>
                         <option value="fixed">กำหนดเป็นจำนวนเงิน</option>
-                    </select>
-
-                    <label class="line-label">ภาษีหัก ณ ที่จ่าย</label>
+                    </select><label class="line-label">ภาษีหัก ณ ที่จ่าย</label>
                     <input id="taxValue" class="line-input number-input" inputmode="decimal"
                         placeholder="เช่น 5 หรือ 1500">
-
                     <button id="saveSettings" class="line-primary w-100 mt-2"><i class="bi bi-check2-circle"></i>
                         บันทึกการตั้งค่า</button>
                 </div>
-
                 <div class="line-card">
                     <div class="card-title"><i class="bi bi-cloud-arrow-down"></i><span>สำรองข้อมูล</span></div>
-                    <button id="exportBtn" class="line-secondary w-100"><i class="bi bi-download"></i> Export Backup
-                        JSON</button>
-                    <label class="line-file mt-2">
-                        <i class="bi bi-upload"></i><span>Import Backup JSON</span>
-                        <input type="file" id="importFile" accept="application/json">
-                    </label>
+                    <div class="backup-grid">
+                        <button id="exportJsonBtn" class="line-primary"><i class="bi bi-filetype-json"></i> Export
+                            JSON</button>
+                        <button id="exportTxtBtn" class="line-primary"><i class="bi bi-filetype-txt"></i> Export
+                            TXT</button>
+                        <button id="exportXlsxBtn" class="line-primary"><i class="bi bi-file-earmark-spreadsheet"></i>
+                            Export XLSX</button>
+                    </div>
+                    <label class="line-file mt-2"><i class="bi bi-upload"></i><span>Import
+                            JSON / TXT / XLSX</span>
+                        <input type="file" id="importFile"
+                            accept=".json,.txt,.xlsx,application/json,text/plain,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"></label>
+                    <div class="backup-note">JSON/TXT ใช้สำรองข้อมูลเต็มระบบ ส่วน XLSX มีชีต Settings, Debts, Payments
+                    </div>
                 </div>
             </section>
-
             <section id="tab-debts" class="tab-panel">
                 <div class="line-card">
                     <div class="card-title"><i class="bi bi-calendar-plus"></i><span>เพิ่มเดือนที่บริษัทค้างจ่าย</span>
-                    </div>
-                    <input type="month" id="debtMonth" class="line-input date-like-input">
-                    <button id="addDebt" class="line-primary w-100 mt-2"><i class="bi bi-plus-circle"></i>
-                        เพิ่มเดือนค้าง</button>
+                    </div><input type="month" id="debtMonth" class="line-input date-like-input"><button id="addDebt"
+                        class="line-primary w-100 mt-2"><i class="bi bi-plus-circle"></i> เพิ่มเดือนค้าง</button>
                 </div>
-
                 <div class="line-card">
-                    <div class="card-title between">
-                        <span><i class="bi bi-list-check"></i> ยอดค้างรายเดือน</span>
-                        <small>เก่าสุดถูกตัดก่อน</small>
-                    </div>
+                    <div class="card-title between"><span><i class="bi bi-list-check"></i>
+                            ยอดค้างรายเดือน</span><small>เก่าสุดถูกตัดก่อน</small></div>
                     <div id="debts" class="line-list"></div>
                 </div>
             </section>
-
             <section id="tab-payments" class="tab-panel">
                 <div class="line-card">
                     <div class="card-title"><i class="bi bi-receipt"></i><span>บันทึกเงินที่บริษัทจ่ายมา</span></div>
-                    <label class="line-label">วันที่บริษัทจ่าย</label>
-                    <input type="date" id="payDate" class="line-input date-like-input">
-
-                    <label class="line-label">จำนวนเงิน</label>
-                    <input id="payAmount" class="line-input number-input" inputmode="decimal" placeholder="เช่น 5000">
-
-                    <button id="addPayment" class="line-primary w-100 mt-2"><i class="bi bi-send-check"></i>
-                        บันทึกการจ่าย</button>
+                    <label class="line-label">วันที่บริษัทจ่าย</label><input type="date" id="payDate"
+                        class="line-input date-like-input"><label class="line-label">จำนวนเงิน</label><input
+                        id="payAmount" class="line-input number-input" inputmode="decimal"
+                        placeholder="เช่น 5000"><button id="addPayment" class="line-primary w-100 mt-2"><i
+                            class="bi bi-send-check"></i> บันทึกการจ่าย</button>
                 </div>
-
                 <div class="line-card">
-                    <div class="card-title between">
-                        <span><i class="bi bi-clock-history"></i> รายการจ่าย</span>
-                        <button id="clearPayments" class="mini-danger" type="button">ล้างทั้งหมด</button>
-                    </div>
+                    <div class="card-title between"><span><i class="bi bi-clock-history"></i> รายการจ่าย</span><button
+                            id="clearPayments" class="mini-danger" type="button">ล้างทั้งหมด</button></div>
                     <div id="payments" class="line-list"></div>
                 </div>
             </section>
             <footer class="app-footer" id="appFooter"></footer>
         </main>
     </div>
-
-    <div id="lineToast" class="line-toast" role="status" aria-live="polite">
+    <div id="lineToast" class="line-toast">
         <div class="toast-icon"><i class="bi bi-check-lg"></i></div>
         <div id="toastText">บันทึกสำเร็จ</div>
     </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
     <script src="assets/js/app.js"></script>
 </body>
 
