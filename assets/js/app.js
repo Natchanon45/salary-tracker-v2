@@ -1,5 +1,5 @@
-const APP_VERSION='2.2';
-const KEY='salary_tracker_v22';
+const APP_VERSION='2.3';
+const KEY='salary_tracker_v23';
 const $=id=>document.getElementById(id);
 
 const defaultData={settings:{salary:0,ssRate:5,taxMode:'percent',taxValue:0},debts:[],payments:[]};
